@@ -16,8 +16,11 @@ tables = soup.find_all("table", {"class": "wikitable"})
 emergency_data = {}
 
 # function to clean text like citations, notes, [1]
-def clean_text(text):
-    return re.sub(r"\[.*?\]", "", text).strip()
+def clean_text(cell):
+    if hasattr(cell, "get_text"):  # If it's a Tag
+        cell = cell.get_text()
+    return re.sub(r"\[.*?\]", "", str(cell)).strip()
+
 
 # function to split multiple numbers
 
@@ -43,7 +46,7 @@ for table in tables:
     # td 5 - notes*
     for row in rows[1:]: # skip the header
         cols = row.find_all("td")
-        print(cols)
+       
         country_name = clean_text(cols[0].text)
         # Try converting to ISO country code
         try:
@@ -54,25 +57,77 @@ for table in tables:
         
         # handling merged cell: 3 columns - all three services same number eg India (4th notes)
 
-        if len(cols) ==2:
+        if len(cols) ==3:
+            print(cols)
             shared = clean_text(cols[1].text)
             numbers = split_numbers(shared)
             notes = clean_text(cols[2])
+            
             emergency_data[country_code] = {"country": country_name,
                 "police": numbers,
                 "ambulance": numbers,
                 "fire": numbers,
             
                 "notes": notes}
-        # Normal case: 4 or more columns for separate numbers
-        elif len(cols) >= 4:
+        # Normal case: 5 columns for separate numbers
+        elif len(cols) == 5:
+            print(cols)
             police = split_numbers(clean_text(cols[1].text))
             ambulance = split_numbers(clean_text(cols[2].text))
             fire = split_numbers(clean_text(cols[3].text))
-
+            notes = clean_text(cols[4].text)
             emergency_data[country_code] = {
                 "country": country_name,
                 "police": police,
                 "ambulance": ambulance,
-                "fire": fire
+                "fire": fire,
+                "notes":notes
             }
+
+           # Case: 3 columns → check which ones are merged via colspan
+        elif len(cols) == 4:
+            c1 = cols[1]
+            c2 = cols[2]
+
+            if c1.has_attr("colspan"):
+                span = int(c1.get("colspan"))
+                if span == 2:
+                    # Police + Ambulance merged
+                    shared = split_numbers(clean_text(c1))
+                    fire = split_numbers(clean_text(c2))
+                    notes = clean_text(cols[3])
+                    emergency_data[country_code] = {
+                        "country": country_name,
+                        "police": shared,
+                        "ambulance": shared,
+                        "fire": fire,
+                        "notes": notes
+                    }
+                elif span == 3:
+                    # All merged
+                    shared = split_numbers(clean_text(c1))
+                    notes = clean_text(cols[3])
+                    emergency_data[country_code] = {
+                        "country": country_name,
+                        "police": shared,
+                        "ambulance": shared,
+                        "fire": shared,
+                        "notes": notes
+                    }
+            elif c2.has_attr("colspan") and int(c2.get("colspan")) == 2:
+                # Ambulance + Fire merged
+                police = split_numbers(clean_text(c1))
+                shared = split_numbers(clean_text(c2))
+                notes = clean_text(cols[3])
+                emergency_data[country_code] = {
+                    "country": country_name,
+                    "police": police,
+                    "ambulance": shared,
+                    "fire": shared,
+                    "notes": notes
+                }
+# Save final structured data to JSON file
+with open("data.json", "w", encoding="utf-8") as f:
+    json.dump(emergency_data, f, indent=2, ensure_ascii=False)
+
+print("✅ Emergency data saved to data.json")
