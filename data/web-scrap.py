@@ -129,5 +129,6 @@ for table in tables:
 # Save final structured data to JSON file
 with open("data.json", "w", encoding="utf-8") as f:
     json.dump(emergency_data, f, indent=2, ensure_ascii=False)
-
+    
+# Finally
 print("✅ Emergency data saved to data.json")
