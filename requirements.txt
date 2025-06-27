@@ -2,3 +2,4 @@ Flask
 requests
 pycountry
 beautifulsoup4
+gunicorn
