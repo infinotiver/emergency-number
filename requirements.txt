@@ -1,4 +1,4 @@
 Flask
 requests
 pycountry
-BeautifulSoup
+beautifulsoup4
