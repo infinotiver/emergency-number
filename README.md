@@ -10,7 +10,7 @@ https://emergency-number-api.onrender.com/api/emergency/<country_code>
 
 ## Endpoints
 ### GET `/:country_code`
-Fetches emergency contact numbers specific to a country.
+Returns emergency contact number of police, ambulance, fire and notes (additional contacts)
 
 #### Example Response
 ```json
