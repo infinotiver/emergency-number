@@ -1,5 +1,4 @@
 Flask
 requests
-json
 pycountry
 BeautifulSoup
