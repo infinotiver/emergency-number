@@ -1,11 +1,14 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 from flask_cors import CORS
+# Serve emergency data
+import json
 
 app = Flask(__name__)
 CORS(app)  # ← This enables cross-origin requests
 
-# Serve emergency data
-import json
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 @app.route('/api/emergency/<country_code>')
 def get_numbers(country_code):
@@ -14,7 +17,6 @@ def get_numbers(country_code):
         with open('data/data.json', 'r') as file:
             
             data = json.load(file)
-            print(data)
         if country_code in data:
             return jsonify(data[country_code])
         else:
