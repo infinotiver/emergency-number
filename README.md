@@ -3,7 +3,7 @@
 This API provides emergency contact numbers web-scraped from Wikipedia page for various services across different countries.
  
 ## Base URL
-The API is hosted on Render's free plan:
+The API for testing purposes is hosted on Render's free plan:
 ```
 https://emergency-number-api.onrender.com/api/emergency/<country_code>
 ```
