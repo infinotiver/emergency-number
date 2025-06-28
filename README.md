@@ -5,7 +5,7 @@ This API provides emergency contact numbers web-scraped from Wikipedia page for 
 ## Base URL
 The API for testing purposes is hosted on Render's free plan:
 ```
-https://emergency-number-api.onrender.com/api/emergency/<country_code>
+https://emergency-number-api.onrender.com/api/emergency/
 ```
 
 ## Endpoints
