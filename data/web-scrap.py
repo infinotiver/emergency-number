@@ -58,7 +58,6 @@ for table in tables:
         # handling merged cell: 3 columns - all three services same number eg India (4th notes)
 
         if len(cols) ==3:
-            print(cols)
             shared = clean_text(cols[1].text)
             numbers = split_numbers(shared)
             notes = clean_text(cols[2])
@@ -71,7 +70,6 @@ for table in tables:
                 "notes": notes}
         # Normal case: 5 columns for separate numbers
         elif len(cols) == 5:
-            print(cols)
             police = split_numbers(clean_text(cols[1].text))
             ambulance = split_numbers(clean_text(cols[2].text))
             fire = split_numbers(clean_text(cols[3].text))
