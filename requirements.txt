@@ -2,5 +2,5 @@ Flask
 flask-cors
 requests
 pycountry
+isocodes
 beautifulsoup4
-gunicorn
