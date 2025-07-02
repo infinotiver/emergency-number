@@ -503,6 +503,19 @@
     ],
     "notes": "Traffic police – 113."
   },
+  "SH": {
+    "country": "Tristan da Cunha",
+    "police": [
+      "999"
+    ],
+    "ambulance": [
+      "911"
+    ],
+    "fire": [
+      "999"
+    ],
+    "notes": ""
+  },
   "ST": {
     "country": "Sao Tome and Principe",
     "police": [
@@ -973,6 +986,19 @@
     ],
     "notes": ""
   },
+  "MF": {
+    "country": "Saint Martin",
+    "police": [
+      "17"
+    ],
+    "ambulance": [
+      "15"
+    ],
+    "fire": [
+      "18"
+    ],
+    "notes": ""
+  },
   "VC": {
     "country": "Saint Vincent and the Grenadines",
     "police": [
@@ -992,6 +1018,19 @@
     ],
     "notes": ""
   },
+  "SX": {
+    "country": "Sint Maarten",
+    "police": [
+      "911"
+    ],
+    "ambulance": [
+      "912"
+    ],
+    "fire": [
+      "919"
+    ],
+    "notes": ""
+  },
   "TT": {
     "country": "Trinidad and Tobago",
     "police": [
@@ -1003,6 +1042,19 @@
     ],
     "fire": [
       "990"
+    ],
+    "notes": ""
+  },
+  "TC": {
+    "country": "Turks and Caicos",
+    "police": [
+      "911"
+    ],
+    "ambulance": [
+      "911"
+    ],
+    "fire": [
+      "911"
     ],
     "notes": ""
   },
@@ -1227,6 +1279,22 @@
     ],
     "notes": "Police – 101; Ambulance – 131; Fire – 102; Emergency in Guayaquil – 112; Traffic police in Guayaquil – 103."
   },
+  "FK": {
+    "country": "Falkland Islands",
+    "police": [
+      "112",
+      "999"
+    ],
+    "ambulance": [
+      "112",
+      "999"
+    ],
+    "fire": [
+      "112",
+      "999"
+    ],
+    "notes": ""
+  },
   "GF": {
     "country": "French Guiana",
     "police": [
@@ -1411,6 +1479,19 @@
       "999"
     ],
     "notes": ""
+  },
+  "BN": {
+    "country": "Brunei",
+    "police": [
+      "993"
+    ],
+    "ambulance": [
+      "991"
+    ],
+    "fire": [
+      "995"
+    ],
+    "notes": "Search and Rescue – 998"
   },
   "KH": {
     "country": "Cambodia",
@@ -1729,6 +1810,19 @@
     ],
     "notes": "Ambulance – 1122; Traffic police – 1915; Mobile phones – 112; Punjab Women's toll free helpline – 1043; Tourist police – 1422; National Highways & Motorway Police – 130; Child Protection & Welfare Bureau – 1121."
   },
+  "PS": {
+    "country": "Palestine",
+    "police": [
+      "100"
+    ],
+    "ambulance": [
+      "101"
+    ],
+    "fire": [
+      "102"
+    ],
+    "notes": ""
+  },
   "PH": {
     "country": "Philippines",
     "police": [
@@ -1865,10 +1959,10 @@
       "102"
     ],
     "ambulance": [
-      "101"
+      "103"
     ],
     "fire": [
-      "103"
+      "101"
     ],
     "notes": "Emergency service – 1050; Gas leaks – 104; Housing and communal services – 1055.\n112 is being introduced as the number for all emergencies on 1 January 2024 in Uzbekistan by the end of 2024."
   },
@@ -2525,6 +2619,22 @@
     ],
     "notes": "911 redirects to 112"
   },
+  "RU": {
+    "country": "Russia",
+    "police": [
+      "102",
+      "112"
+    ],
+    "ambulance": [
+      "103",
+      "112"
+    ],
+    "fire": [
+      "101",
+      "112"
+    ],
+    "notes": "Gas emergency – 104; 112 came into effect (for any emergency) in 2013"
+  },
   "SM": {
     "country": "San Marino",
     "police": [
@@ -2646,6 +2756,19 @@
     ],
     "notes": "Non-emergency police – 101; Power outages – 105; Non-emergency health issues – 111; COVID-19 testing helpline – 119; gas leaks – 0800 111 999. SMS messages can be sent to 999 after registration by sending a text message with the word 'Register' to 999. 911 redirects to 999 on mobile phones/public phonebooths and on telephones used in USAFE bases."
   },
+  "VA": {
+    "country": "Vatican City",
+    "police": [
+      "112"
+    ],
+    "ambulance": [
+      "112"
+    ],
+    "fire": [
+      "112"
+    ],
+    "notes": "Police – 113; Ambulance – 118; Fire – 115."
+  },
   "AS": {
     "country": "American Samoa",
     "police": [
@@ -2742,6 +2865,19 @@
   },
   "MH": {
     "country": "Marshall Islands",
+    "police": [
+      "911"
+    ],
+    "ambulance": [
+      "911"
+    ],
+    "fire": [
+      "911"
+    ],
+    "notes": ""
+  },
+  "FM": {
+    "country": "Micronesia",
     "police": [
       "911"
     ],
